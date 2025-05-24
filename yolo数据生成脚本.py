@@ -17,7 +17,7 @@ if __name__ == '__main__':
     model_path = 'runs/train/exp/weights/best.pt'
     model = YOLO(model_path) # 选择训练好的权重路径
     result = model.val(data='/root/dataset/dataset_visdrone/data.yaml',
-                        split='val', # split可以选择train、val、test 根据自己的数据集情况来选择.
+                        split='val'， # split可以选择train、val、test 根据自己的数据集情况来选择.
                         imgsz=640,
                         batch=16,
                         project='runs/val',
@@ -25,7 +25,7 @@ if __name__ == '__main__':
                         )
     
     if model.task == 'detect': # 仅目标检测任务适用
-        length = result.box.p.size
+        length = result.box。p.size
         model_names = list(result.names.values())
         preprocess_time_per_image = result.speed['preprocess']
         inference_time_per_image = result.speed['inference']
